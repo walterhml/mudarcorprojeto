@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trocador de Cores</title>
+</head>
+<body>
+    <label for="cor1">Cor 1:</label>
+    <input type="color" id="cor1" name="cor1">
+    <br>
+    <label for="cor2">Cor 2:</label>
+    <input type="color" id="cor2" name="cor2">
+    <br>
+    <div id="combinaCores"></div>
+
+    <script>
+    function combinaCores() {
+        var cor1 = document.getElementById("cor1").value;
+        var cor2 = document.getElementById("cor2").value;
+
+        var gradiente = "linear-gradient(45deg, " + cor1 + ", " + cor2 + ")";
+        document.getElementById("combinaCores").style.background = gradiente;
+    }
+
+    document.getElementById("cor1").addEventListener("input", combinaCores);
+    document.getElementById("cor2").addEventListener("input", combinaCores);
+    </script>
+</body>
+</html>
